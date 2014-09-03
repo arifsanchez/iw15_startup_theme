@@ -68,7 +68,7 @@ body {
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
-/* Center align the text within the three columns below the carousel */
+/* Center align the text within the three newsfeed item below the slider */
 .marketing .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
@@ -81,6 +81,42 @@ body {
   margin-left: 10px;
 }
 
+/* ABOUT CONTENT
+-------------------------------------------------- */
+
+.about {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+/* Gallery
+-------------------------------------------------- */
+.gallery {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+img {
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    margin-bottom:20px;
+}
+
+img:hover {
+  filter: none; /* IE6-9 */
+  -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+ 
+}
+
+/* Contact Us
+-------------------------------------------------- */
+.contact {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
 
 /* Featurettes
 ------------------------- */
@@ -138,3 +174,4 @@ body {
     margin-top: 120px;
   }
 }
+
