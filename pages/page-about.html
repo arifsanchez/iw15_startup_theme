@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="">
-        <title>#FB NAME# - InstaWeb</title>
+        <meta name="author" content="instaweb">
 
         <!-- Bootstrap required-->
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
@@ -22,6 +21,7 @@
     </head>
     
     <body>
+		
         <!-- CONTENT AREA # START -->
         
         <!-- MENU NAVBAR ================================================== -->
@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#">#FB NAME#</a>
+                  <a class="navbar-brand" href="#"><span class="FBpagePageName"></span></a>
                 </div>
                 <div class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
@@ -67,11 +67,13 @@
             <!-- Introduction Row -->
             <div class="row">
 				<div class="col-lg-2">
-					<div>#FB PAGE WALL PHOTO#</div>
+					<div id="FBpagePhoto"></div>
 				</div>
-                <div class="col-lg-10">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel?</p>
+                <div class="col-lg-8">
+                    <p id="FBpageAbout"></p>
+					<p id="FBpageDescription"></p>
                 </div>
+				
             </div>
 			<!-- Introduction /.row -->
 			
@@ -80,9 +82,9 @@
             
         <!-- FOOTER ================================================== -->
             <footer>
-        <p class="pull-right"><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Back to top</a></p>
-                <p>© 2014 #FB NAME# · We have logged your IP : <span id="ipinfo"></span></p>
-      </footer>
+        		<p class="pull-right"><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Back to top</a></p>
+                <p>© 2014 <span class="FBpagePageName"></span> · We have logged your IP : <span id="ipinfo"></span> · <span class="fb-like" data-send="true" data-show-faces="false"></span></p>
+      		</footer>
         <!-- FOOTER ================================================== -->
             
         </div>
@@ -96,6 +98,12 @@
         <script src="../assets/js/ie10-viewport-hacks.js"></script>
 
         <!-- Script JS # base on theme -->
-        
+        <script src="../assets/js/check-ip.js"></script>
+		<script src="http://stage.instaweb.my/call/kweri.php?callback=getip"></script>
+		
+		<!-- FB Calling Initiated -->
+		<script src="../assets/js/fb-calling.js"></script>
+		<script src="http://stage.instaweb.my/call/kweri-fb.php?fbPageName=hello.silittledara&callback=getFBpix"></script>
+
     </body>
 </html>
