@@ -36,14 +36,17 @@ $(document).ready(function(){
 		/*Assign about , description if any*/
 		if(document.getElementById('FBpageAbout') !== null){
 			document.getElementById('FBpageAbout').innerHTML = fbResults.about;
+			console.log('FBpageAbout: AVAILABLE');
 		}
 
 		if(document.getElementById('FBpageDescription') !== null){
 			document.getElementById('FBpageDescription').innerHTML = fbResults.description;
+			console.log('FBpageDescription: AVAILABLE');
 		}
 
 		/*assign fb name to most places in page element */
 		if(document.getElementsByClassName("FBpagePageName") !== null){
+			console.log('FBpagePageName: AVAILABLE');
 			var PageName = document.getElementsByClassName("FBpagePageName");
 			for(i=0;i<PageName.length;i++)
 			{
@@ -56,6 +59,16 @@ $(document).ready(function(){
 });
 
 /** * Retrieve jSon data from kweri-fb and assigned to specific placement id***/
+function getfbFeeds(json){
+	var fbFeeds = jQuery.parseJSON(json) , container = document.getElementById('FBfeeds');
+
+	$.each(JSON.parse(json),function(idx,obj){
+		/*container.innerHTML = '<img class="img-circle" src="' + this.data.full_picture + '"></img';*/
+		console.log("Title: " + this.name);
+		alert(obj.Name);
+	})
+}
+
 function getFBpix(json){
 	var FBpix, container = document.getElementById('FBpagePhoto');
 
