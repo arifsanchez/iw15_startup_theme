@@ -25,7 +25,7 @@ var FBpageName = function () {
 /** * Retrieve public data for this page ***/
 $(document).ready(function(){
 	/* Dapatkan data tanpa Access Token FB */
-		$.getJSON('https://graph.facebook.com/' + FBpageName.fbPageName, function(fbResults) {
+	$.getJSON('https://graph.facebook.com/' + FBpageName.fbPageName, function(fbResults) {
 
 		/*Assign Title dekat page*/
 		var pgtit = document.createElement("title");
@@ -44,6 +44,17 @@ $(document).ready(function(){
 			console.log('FBpageDescription: AVAILABLE');
 		}
 
+		if(document.getElementById('FBpageAddress') !== null){
+			if(typeof fbResults.location =='object'){
+				var lokasi = fbResults.location;
+				document.getElementById('FBpageAddress').innerHTML = lokasi.street;
+				console.log(lokasi.street);
+			} else {
+				/*notify user need to add address location*/
+				document.getElementById('FBpageAddress').innerHTML = "Liked by " + fbResults.likes + " customers.";
+			}
+		}
+
 		/*assign fb name to most places in page element */
 		if(document.getElementsByClassName("FBpagePageName") !== null){
 			console.log('FBpagePageName: AVAILABLE');
@@ -59,15 +70,14 @@ $(document).ready(function(){
 });
 
 /** * Retrieve jSon data from kweri-fb and assigned to specific placement id***/
-function getfbFeeds(json){
+/*function getfbFeeds(json){
 	var fbFeeds = jQuery.parseJSON(json) , container = document.getElementById('FBfeeds');
 
 	$.each(JSON.parse(json),function(idx,obj){
-		/*container.innerHTML = '<img class="img-circle" src="' + this.data.full_picture + '"></img';*/
 		console.log("Title: " + this.name);
 		alert(obj.Name);
 	})
-}
+}*/
 
 function getFBpix(json){
 	var FBpix, container = document.getElementById('FBpagePhoto');
